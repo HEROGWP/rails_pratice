@@ -13,6 +13,6 @@ module RailsPratice
     # -- all .rb files in that directory are automatically loaded.
     
     #台北時區設定
-    #config.time_zone = "Taipei"
+    config.time_zone = "Taipei"
   end
 end
