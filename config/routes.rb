@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :events
   resources :people
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/welcome/say_hello" => "welcome#say"
   get "welcome" => "welcome#index"
   root :to =>"welcome#index"
 
-  match ':controller(/:action(/:id(.:format)))', :via => :all
+  #外卡路由
+  #match ':controller(/:action(/:id(.:format)))', :via => :all
 end
