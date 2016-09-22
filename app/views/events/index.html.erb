@@ -4,10 +4,13 @@
  	<%= event.name %>
  	<%= event.created_at %>
   	<%= link_to 'Show', event_path(event) %>
+  	<%= link_to 'Get Xml', event_path(event, :format => :xml) %>
+  	<%= link_to 'Get Json', event_path(event, :format => :json) %>
   	<%= link_to 'Edit', edit_event_path(event) %>
   	<%= link_to 'Delete', event_path(event), :method => :delete %>
   </li>
 <% end %>
 </ul>
 <%= link_to 'New Event', new_event_path %>
+<%= link_to "Atom feed", events_path(:format => :atom) %>
 <%= paginate @events %>

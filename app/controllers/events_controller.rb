@@ -3,10 +3,23 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.xml{render :xml => @events.to_xml}
+      format.json{render :json => @events.to_json}
+      format.atom{
+        @feed_title = "My events list for atom"
+      }#index.atom.builder 
+    end
   end
   
   def show
-
+    respond_to do |format|
+      format.html
+      format.xml
+      format.json{render :json => { id: @event.id, name: @event.name }.to_json }
+    end
   end
 
   def new
