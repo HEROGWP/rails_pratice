@@ -1,0 +1,7 @@
+<h2>new attendee</h2>
+<%= form_for @attendee, :url => event_attendees_path(@event) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.submit "create attendee", :class => "btn btn-info" %>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h2>Event_name:<%= @event.name %> </h2>
+<ul>
+	<% @attendees.each do |attendee| %>
+		<li>
+			<%= attendee.name %>
+			<%= link_to "show", event_attendee_path(@event, attendee), :class => "btn btn-info" %>
+			<%= link_to "edit", edit_event_attendee_path(@event, attendee), :class => "btn btn-warning" %>
+			<%= link_to "delete", event_attendee_path(@event, attendee), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger" %>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to "new attendee", new_event_attendee_path(@event), :class => "btn btn-info" %>
+<%= link_to "back to events", events_path, :class => "btn btn-info" %>
