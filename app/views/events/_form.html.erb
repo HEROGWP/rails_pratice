@@ -25,7 +25,10 @@
 	<%= f.label :category_id, "Category" %>
 	<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Please select"  %>	
 </p> -->
-
+<%= f.label :Category, "Category:" %>
 <% Category.all.each do |c| %>
 	<%= f.radio_button :category_id, c.id %><%= c.name %>
-<% end %>
+<% end %><br>
+
+<%= f.label :Group, "Group:" %>
+<%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %><br>
