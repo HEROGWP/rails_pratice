@@ -8,6 +8,15 @@ class EventsController < ApplicationController
       @events = Event.all
     end 
 
+    if params[:order] == "name"
+      order_by = "name"
+    elsif params[:order] == "created_at"
+      order_by = "created_at" 
+    else   
+      order_by = "id"
+    end
+
+    @events = @events.order(order_by)
 
     @events = @events.page(params[:page]).per(10)
 

@@ -6,8 +6,8 @@
 <%= form_tag bulk_update_events_path do %>
 	<table class="table table-hover">
 		<tr>
-			<th>name</th>
-			<th>created_at</th>
+			<th><%= link_to "name", events_path(:order => "name") %></th>
+			<th><%= link_to "created_at", events_path(:order => "created_at") %></th>
 			<th></th>
 		</tr>
 
