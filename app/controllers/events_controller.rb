@@ -71,6 +71,10 @@ class EventsController < ApplicationController
 
     redirect_to events_path
   end
+
+  def latest
+    @events = Event.order("id DESC").limit(3)
+  end
   private
   def set_event
     @event = Event.find(params[:id])

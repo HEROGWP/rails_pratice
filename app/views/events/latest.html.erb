@@ -1,0 +1,6 @@
+<ul>
+	<% @events.each do |e|%>
+		<li><%= e.name %></li>
+	<% end %>
+</ul>
+<%= link_to "back index", events_path, :class => "btn btn-info" %>

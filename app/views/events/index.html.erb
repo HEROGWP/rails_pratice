@@ -31,6 +31,7 @@
 <% end %>
 <div>
 	<%= link_to 'New Event', new_event_path , :class => "btn btn-primary"%>
+	<%= link_to 'Latest Event', latest_events_path , :class => "btn btn-primary"%>
 	<%= link_to "Atom feed", events_path(:format => :atom), :class => "btn btn-primary" %>
 </div>
 <%= paginate @events %>
