@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       post :bulk_update
       get :latest
     end
+
+    member do
+      get :dashboard
+    end
   end
   
 

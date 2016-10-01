@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, :only => [:show, :edit, :update, :destroy]
+  before_action :set_event, :only => [:show, :edit, :update, :destroy, :dashboard]
 
   def index
     @events = Event.page(params[:page]).per(10)
@@ -74,6 +74,10 @@ class EventsController < ApplicationController
 
   def latest
     @events = Event.order("id DESC").limit(3)
+  end
+
+  def dashboard
+    
   end
   private
   def set_event

@@ -15,6 +15,7 @@
 		 		<td><%= event.created_at %></td>
 		  	<td>
 		  		<%= link_to 'Show', event_path(event), :class => "btn btn-primary" %>
+		  		<%= link_to 'Dashboard', dashboard_event_path(event), :class => "btn btn-primary" %>
 		  		<%= link_to 'Get Xml', event_path(event, :format => :xml), :class => "btn btn-primary" %>
 		  		<%= link_to 'Get Json', event_path(event, :format => :json), :class => "btn btn-primary" %>
 		  		<%= link_to 'Edit', edit_event_path(event), :class => "btn btn-primary" %>
