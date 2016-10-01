@@ -32,3 +32,6 @@
 
 <%= f.label :Group, "Group:" %>
 <%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %><br>
+
+<%= f.label :status, "Status" %>
+<%= f.select :status, [["Pubilshed", "published"], ["Draft", "Draft"]]  %>	
