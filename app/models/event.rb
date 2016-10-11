@@ -7,4 +7,8 @@ class Event < ApplicationRecord
 	belongs_to :category
 	belongs_to :user
 	delegate :name, :to => :category, :prefix => true, :allow_nil => true
+
+
+	has_attached_file :logo, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "http://img.chinatimes.com/newsphoto/2016-05-04/656/20160504005468.jpg"
+  validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 end

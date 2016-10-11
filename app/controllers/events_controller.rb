@@ -59,6 +59,9 @@ class EventsController < ApplicationController
   end
 
   def update
+    if params[:remove] = "1"
+      @event.logo = nil
+    end
     if @event.update(event_params)
       flash[:notice] = "編輯成功"
       redirect_to :action => :show, :id => @event.id 
@@ -102,6 +105,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :category_id, :status, :group_ids => [], :ids => [] )
+    params.require(:event).permit(:name, :description, :category_id, :status, :logo, :group_ids => [], :ids => [] )
   end
 end

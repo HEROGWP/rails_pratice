@@ -14,4 +14,9 @@
 <p><%= @event.status %></p>
 <p><%= @event.created_at %></p>
 <p><%= @event.updated_at %></p>
+<p>
+	<%= image_tag @event.logo.url %>
+	<%= image_tag @event.logo.url(:medium) %>
+	<%= image_tag @event.logo.url(:thumb) %>
+</p>
 <%= link_to "Back to index", events_path %>
