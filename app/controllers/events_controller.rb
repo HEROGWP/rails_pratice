@@ -74,7 +74,10 @@ class EventsController < ApplicationController
     
     @event.destroy
     flash[:alert] = "刪除成功"
-    redirect_to :action => :index
+    respond_to do |format|
+      format.js
+    end
+    #redirect_to :action => :index
   end
 
 
