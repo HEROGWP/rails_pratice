@@ -47,6 +47,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
+      UserMailer.notify_event(current_user, @event).deliver_now!
       flash[:notice] = "新增成功"
       redirect_to :action => :index
     else

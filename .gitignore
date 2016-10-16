@@ -22,3 +22,6 @@
 
 # Ignore facebook app config
 /config/facebook.yml
+
+# Ignore mailer app config
+/config/email.yml
