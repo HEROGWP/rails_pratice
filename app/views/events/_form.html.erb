@@ -37,7 +37,7 @@
 <%= f.select :status, [["Pubilshed", "published"], ["Draft", "Draft"]]  %>	
 
 <%= f.label :logo, "Logo:" %>
-<%= file_field_tag "logo[]", multiple: true %>
+<%= f.file_field :logo %>
 
 <% if @event.logo.exists? %>
 	<%= check_box_tag :remove, "1" %> 移除logo
